@@ -60,9 +60,24 @@
       <h1>Welcome to <strong>semaBot</strong>! — AI WhatsApp Mentor for <strong>தமிழ்</strong> Entrepreneurs</h1>
       <p class="muted">“தமிழ்ல straight-ஆன advice. English prompt genius இல்லை-na கூட, growth clarity in minutes.”</p>
       <p>WhatsApp-first mentor for founders — <strong>GTM tips, wellbeing nudges, crisis support</strong> — எல்லாமே practical-ஆனா, founder-friendly tone-ல.</p>
-
-      <a class="cta" href="mailto:karthik.dr@gmail.com">Email: karthik.dr@gmail.com</a>
-
+      <form id="waitlistForm" novalidate>
+        <div class="row">
+          <div>
+            <label for="name">Name</label>
+            <input id="name" name="name" type="text" autocomplete="name" required />
+          </div>
+          <div>
+            <label for="email">Email</label>
+            <input id="email" name="email" type="email" autocomplete="email" required />
+          </div>
+        </div>
+        <!-- Honeypot -->
+        <input type="text" name="company" tabindex="-1" autocomplete="off" style="position:absolute;left:-5000px;opacity:0" aria-hidden="true" />
+        <button class="btn" id="submitBtn" type="submit">Join</button>
+        <div class="error" id="err" role="alert" style="display:none"></div>
+        <div class="success" id="ok" style="display:none">✅ Added! We’ll email you soon.</div>
+        <p class="note">We’ll use your email only to notify you about semaBot. You can opt out anytime.</p>
+      </form>
       <div class="grid">
         <div>
           <h2>What is SemaBot?</h2>
@@ -89,24 +104,7 @@
         <div>
           <h2>Join the Waitlist</h2>
           <!-- we keep it standard form; JS will attach the endpoint and handle fallback -->
-          <form id="waitlistForm" novalidate>
-            <div class="row">
-              <div>
-                <label for="name">Name</label>
-                <input id="name" name="name" type="text" autocomplete="name" required />
-              </div>
-              <div>
-                <label for="email">Email</label>
-                <input id="email" name="email" type="email" autocomplete="email" required />
-              </div>
-            </div>
-            <!-- Honeypot -->
-            <input type="text" name="company" tabindex="-1" autocomplete="off" style="position:absolute;left:-5000px;opacity:0" aria-hidden="true" />
-            <button class="btn" id="submitBtn" type="submit">Join</button>
-            <div class="error" id="err" role="alert" style="display:none"></div>
-            <div class="success" id="ok" style="display:none">✅ Added! We’ll email you soon.</div>
-            <p class="note">We’ll use your email only to notify you about semaBot. You can opt out anytime.</p>
-          </form>
+          
           <!-- hidden iframe for GET-beacon fallback (no CORS) -->
           <iframe id="ghost" name="ghost" style="display:none"></iframe>
         </div>
